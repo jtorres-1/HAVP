@@ -304,18 +304,7 @@ a { text-decoration: none; color: inherit; }
     linear-gradient(160deg, #2A0810 0%, #541422 35%, #7B1C2E 65%, #3A0D1A 100%);
 }
 
-/* Decorative cross watermark */
-.hero-bg::before {
-  content: '✝';
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: clamp(200px, 30vw, 380px);
-  color: rgba(255,255,255,0.03);
-  pointer-events: none;
-  line-height: 1;
-}
+/* Decorative cross watermark removed – renders as emoji on iOS */
 
 .hero-overlay {
   position: absolute;
@@ -559,15 +548,7 @@ a { text-decoration: none; color: inherit; }
   pointer-events: none;
 }
 
-.schedule-bg-pattern::before {
-  content: '✝';
-  position: absolute;
-  left: -2%;
-  top: -10%;
-  font-size: 400px;
-  color: rgba(255,255,255,0.02);
-  pointer-events: none;
-}
+/* Schedule cross decoration removed – renders as emoji on iOS */
 
 .schedule-grid {
   display: grid;
@@ -946,16 +927,6 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 
-.donate-section::before {
-  content: '✝';
-  position: absolute;
-  right: -2%;
-  top: -10%;
-  font-size: 380px;
-  color: rgba(255,255,255,0.025);
-  pointer-events: none;
-}
-
 .donate-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1003,11 +974,74 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.5;
 }
 
+/* =============================================
+   MOBILE RESPONSIVE
+   ============================================= */
+
 @media (max-width: 768px) {
-  .donate-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .photo-banner { height: 260px; }
-  .photo-strip { height: 220px; }
-  .photo-banner-overlay { padding: 1.5rem; }
+  .nav-inner { padding: 1rem 1.5rem; }
+  .logo-text { font-size: 0.85rem; }
+
+  .section { padding: 3.5rem 1.25rem; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-decorative { order: -1; }
+
+  /* Photo */
+  .photo-banner { height: 240px; }
+  .photo-banner-overlay { padding: 1.25rem 1.5rem; }
+  .photo-banner-overlay p { font-size: 0.95rem; }
+  .photo-strip { height: 200px; }
+
+  /* Schedule */
+  .schedule-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* Sermons */
+  .sermons-placeholder-grid { grid-template-columns: 1fr; }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 180px;
+  }
+  .gallery-item-tall { grid-row: span 1; }
+
+  /* Donate */
+  .donate-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-form-wrap { padding: 1.5rem; }
+
+  /* Video */
+  .video-wrap { max-height: 480px; }
+
+  /* Strip */
+  .strip-divider { display: none; }
+  .strip-inner { gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: 2.8rem; }
+  .hero-logo { width: 150px; height: 150px; }
+  .section-title { font-size: 2rem; }
+
+  .schedule-grid { grid-template-columns: 1fr; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .donate-grid { gap: 2rem; }
+  .donate-qr-card { padding: 1.5rem; }
+
+  .about-decorative {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-form-wrap { padding: 1.25rem; }
 }
 
 /* =============================================

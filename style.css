@@ -986,7 +986,7 @@ a { text-decoration: none; color: inherit; }
 
   /* About */
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-decorative { order: -1; }
+  .about-decorative { order: 0; }
 
   /* Photo */
   .photo-banner { height: 240px; }

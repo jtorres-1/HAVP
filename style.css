@@ -890,6 +890,139 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =============================================
+   PHOTO BANNER
+   ============================================= */
+
+.photo-banner {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.photo-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.photo-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,10,15,0.75) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem 3rem;
+}
+
+.photo-banner-overlay p {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+}
+
+/* =============================================
+   PHOTO STRIP
+   ============================================= */
+
+.photo-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 320px;
+}
+
+.photo-strip-item {
+  overflow: hidden;
+}
+
+.photo-strip-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.photo-strip-item:hover img {
+  transform: scale(1.04);
+}
+
+/* =============================================
+   DONATIONS
+   ============================================= */
+
+.donate-section {
+  background: var(--wine-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.donate-section::before {
+  content: '✝';
+  position: absolute;
+  right: -2%;
+  top: -10%;
+  font-size: 380px;
+  color: rgba(255,255,255,0.025);
+  pointer-events: none;
+}
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.donate-qr-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.donate-qr-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  max-width: 320px;
+  width: 100%;
+}
+
+.donate-qr-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wine);
+  margin-bottom: 1.25rem;
+}
+
+.donate-qr {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.donate-qr-sub {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .donate-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .photo-banner { height: 260px; }
+  .photo-strip { height: 220px; }
+  .photo-banner-overlay { padding: 1.5rem; }
+}
+
+/* =============================================
    WORSHIP VIDEO
    ============================================= */
 

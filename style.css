@@ -487,44 +487,24 @@ a { text-decoration: none; color: inherit; }
 .about-text strong { color: var(--wine); }
 
 .about-decorative {
-  position: relative;
-  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
 }
 
 .about-card {
-  position: absolute;
   background: var(--wine);
   color: var(--white);
   border-radius: 4px;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow);
 }
 
 .about-card:first-child {
-  width: 200px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  grid-column: span 2;
   background: var(--wine-dark);
-  z-index: 2;
-}
-
-.about-card-sm {
-  width: 150px;
-  padding: 1.5rem 1rem;
-}
-
-.about-card-sm:nth-child(2) {
-  top: 15%;
-  left: 0;
-}
-
-.about-card-sm.about-card-right {
-  top: 55%;
-  right: 0;
-  left: auto;
-  background: var(--wine-light);
 }
 
 .about-card-cross {
@@ -549,6 +529,14 @@ a { text-decoration: none; color: inherit; }
   text-transform: uppercase;
   color: rgba(255,255,255,0.7);
   margin-top: 0.4rem;
+}
+
+.about-card-sm {
+  background: var(--wine-light);
+}
+
+.about-card-right {
+  background: var(--wine);
 }
 
 /* =============================================

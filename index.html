@@ -344,7 +344,8 @@
           </div>
         </div>
         <div class="contact-form-wrap">
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" name="contact" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
             <div class="form-group">
               <label for="name">Nombre</label>
               <input type="text" id="name" name="name" placeholder="Tu nombre completo" required />

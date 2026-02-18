@@ -64,22 +64,13 @@ revealElements.forEach(el => {
   revealObserver.observe(el);
 });
 
-// Contact form handler (ready for Netlify Forms)
+// Contact form — Netlify Forms compatible
+// Do NOT use e.preventDefault() so Netlify can receive the submission
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  contactForm.addEventListener('submit', function () {
     const btn = this.querySelector('button[type="submit"]');
-    btn.textContent = '¡Mensaje Enviado! 🙏';
+    btn.textContent = 'Enviando... 🙏';
     btn.disabled = true;
-    btn.style.background = '#2e7b32';
-    btn.style.borderColor = '#2e7b32';
-    setTimeout(() => {
-      btn.textContent = 'Enviar Mensaje';
-      btn.disabled = false;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      contactForm.reset();
-    }, 4000);
   });
 }
